@@ -1,0 +1,12 @@
+(ROOT
+  (S
+    (S
+      (NP (PRP I))
+      (VP (VBP am)
+        (NP (NNP John))))
+    (CC and)
+    (S
+      (NP (PRP I))
+      (VP (VBP am)
+        (NP (DT an) (NN engineer))))
+    (. .))) 

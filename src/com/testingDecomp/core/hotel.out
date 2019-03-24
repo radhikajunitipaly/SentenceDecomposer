@@ -1,0 +1,19 @@
+(ROOT
+  (S
+    (NP (DT The) (NNP HRS))
+    (VP (NN respond)
+      (PP (IN with)
+        (NP
+          (NP (DT a) (NN list))
+          (PP (IN of)
+            (NP
+              (NP (NN summary) (NNS descriptions))
+              (PP (IN of)
+                (NP
+                  (NP (DT the) (NNS rooms))
+                  (SBAR
+                    (WHNP (WDT that))
+                    (S
+                      (VP (VB satisfy)
+                        (NP (DT the) (NN search) (NNS criteria))))))))))))
+    (. .)))
