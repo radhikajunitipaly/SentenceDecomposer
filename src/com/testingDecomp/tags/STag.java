@@ -1,18 +1,14 @@
 package com.testingDecomp.tags;
 
 import com.testingDecomp.core.*;
-import java.util.HashMap;
-import java.util.Map;
 
 public class STag extends DecompSentence {
 	
-	Map<String, String> decomposerProcessingPartsMap = new HashMap<String, String>();
-	
-	public STag(Map<String, String> decomposerProcessingPartsMap) {
-		this.decomposerProcessingPartsMap = decomposerProcessingPartsMap;
+	public STag() {
+		super();
 	}
 	
-	public Map<String, String> decompose() {
+	public void processTag() {
 		String top = decomposerProcessingPartsMap.get("top");
 		String element = decomposerProcessingPartsMap.get("element");
 		String originalSubject = decomposerProcessingPartsMap.get("originalSubject");
@@ -31,7 +27,6 @@ public class STag extends DecompSentence {
 	        decomposerProcessingPartsMap.put("continueWhileLoop", "true");
 	        decomposerProcessingPartsMap.put("tagProcessed", "true");
         }
-	    return decomposerProcessingPartsMap;
 	}
 
 }
