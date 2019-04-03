@@ -8,6 +8,7 @@ public class VBNTag extends DecompSentence {
 		super();
 	}
 	
+	@Override
 	public void processTag() {
 		String top = decomposerProcessingPartsMap.get("top");
 		String element = decomposerProcessingPartsMap.get("element");

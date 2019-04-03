@@ -17,10 +17,14 @@ import java.util.*;
  */
 public abstract class DecompSentence {
 	
-  	static Stack<String> stack=new Stack<String>();
+  	protected static Stack<String> stack=new Stack<String>();
   	protected static Map<String, String> decomposerProcessingPartsMap = 
   			new HashMap<String, String>();
   	static String fileName = null;
+  	protected static Boolean npAlreadySet = false;
+  	protected static Boolean prpAlreadyReplaced = false;
+  	protected static Boolean didNothingSoAddElementToStack = false;
+  	protected static Boolean inAddedToSubject = false;
   
 	public static void procTree(File folder){
 		if(folder == null) {
@@ -59,7 +63,7 @@ public abstract class DecompSentence {
 
 	void printStack() {
 		for(int i=0; i<stack.size(); i++) {
-			System.out.println((String)stack.get(i));
+			System.out.println(stack.get(i));
 		}
 	}
   

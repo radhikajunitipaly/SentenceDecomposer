@@ -47,7 +47,7 @@ public class CompositeTag extends DecompSentence {
 			            String element="";
 			            String top="";
 			            while (!stack.isEmpty()){
-			                top=(String)stack.pop();
+			                top=stack.pop();
 			                if (top.indexOf("(")>=0) {
 			                    break;
 			                }
@@ -58,8 +58,10 @@ public class CompositeTag extends DecompSentence {
 			                }
 			            }
 			            tag = top.substring(1);
-			            if(tag.equals("S") || tag.equals("SBAR") || tag.equals("NP") || 
-			            		tag.equals("VBZ") || tag.equals("VBN")) {
+			            if(tag.equals("PRP$")) 
+			            	tag = "PRPDollar";
+			            if(tag.equals("S") || tag.equals("CC") || tag.equals("SBAR") || tag.equals("NP") || 
+			            		tag.equals("VBZ") || tag.equals("VBN") || tag.contains("PRPDollar") || tag.contains("IN")) {
 				            decomposerProcessingPartsMap.put("top", top);
 				            decomposerProcessingPartsMap.put("element", element);
 				            
@@ -67,13 +69,18 @@ public class CompositeTag extends DecompSentence {
 				            
 				            if(tagObject != null)
 				            	tagObject.processTag();
-				            
+				            if(!didNothingSoAddElementToStack) {
+				            	decomposerProcessingPartsMap.put("continueWhileLoop", "false");
+				            	element = decomposerProcessingPartsMap.get("element");
+				            }
+				            didNothingSoAddElementToStack = false;
 				            if(decomposerProcessingPartsMap.get("continueWhileLoop") == "true"){
 				            	decomposerProcessingPartsMap.put("continueWhileLoop", "false");
 				            	continue;
 				            }   
 			            }
-			            stack.push(element);
+			            if(!element.trim().equals(""))
+			            	stack.push(element);
 		            }
 		       	}
 		      }

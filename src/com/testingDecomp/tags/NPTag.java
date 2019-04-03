@@ -8,15 +8,20 @@ public class NPTag extends DecompSentence {
 		super();
 	}
 	
+	@Override
 	public void processTag() {
 		String top = decomposerProcessingPartsMap.get("top");
 		String element = decomposerProcessingPartsMap.get("element");
 		String subject = decomposerProcessingPartsMap.get("subject");
-		if (top.indexOf("(NP")>=0 && subject!=null && subject.equals("") && element!=null && !element.equals("")) {
+		if(npAlreadySet) {
+			didNothingSoAddElementToStack = true;
+		}
+		else if (top.indexOf("(NP")>=0 && subject!=null && element!=null && !element.equals("")) {
             // a NP is in element
-			decomposerProcessingPartsMap.put("subject",  element);
-			decomposerProcessingPartsMap.put("originalSubject",  element);
+			decomposerProcessingPartsMap.put("subject", subject+element);
+			decomposerProcessingPartsMap.put("originalSubject", element);
 	        decomposerProcessingPartsMap.put("continueWhileLoop", "false");
+	        npAlreadySet = true;
         }
 	}
 }
