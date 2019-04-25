@@ -1,0 +1,149 @@
+% Weka comments begin with a percentage sign
+% This file is an example of training data
+
+% The following line defines a relation called NLP Parse Tree to Class
+% Name Mapping. Since it contains space, it must be quoted.
+% It maps the root of a subtree and its immediate children to a class
+% name of the composite pattern.
+
+@relation 'NLP Parse Tree to Class Name Mapping'
+
+% The following lines defines the attributes (or features) of this
+% relation. In general, a relation may have many attributes but in
+% this case we have only two.
+% The first line specifies an attribute called "text" with type
+% string. The second line specifies an attribute "call" with
+% enumeration type with elements enclosed in the pair of "{" and "}."
+% Each attribute line must be one line. That is, multiple lines must
+% be joined to form one long line.
+
+@attribute text string
+@attribute class {SimpleSentence, Subclause, VerbingClause, IsA, ConjuctNouns}
+
+% The following line specifies that the data begins
+
+@data
+
+'(S (NP (VP', SimpleSentence
+'(SBAR (WHNP (S', Subclause
+'(S (VP', VerbingClause
+'VP (VBZ (NP', IsA
+'(NP (NP (NP (, (CC (NP', ConjuctNouns
+'(S(SBAR',Label1
+'(SBAR(WHADVP(S',Label2
+'(WHADVP(WRB',Label3
+'(S(NP(VP',Label4
+'(NP(DT(NN',Label5
+'(VP(VBZ(NP',Label6
+'(NP(NP(PP',Label7
+'(NP(DT(NNS',Label8
+'(PP(IN(NP',Label9
+'(NP(JJ(NN',Label10
+'(S(,(,',Label11
+'(S(NP',Label12
+'(NP(NP(PP',Label7
+'(NP(DT',Label13
+'(PP(IN(NP(PRP',Label14
+'(S(VP',Label15
+'(VP(VBP(PP',Label16
+'(PP(IN(NP',Label9
+'(NP(PRP(NN(CC(NN',Label17
+'(S(.',Label18
+'(S(NP',Label12
+'(NP(NNP(NNP',Label18
+'(S(VP',Label15
+'(VP(VBZ(CC(VBZ(NP',Label19
+'(NP(NP(CONJP(NP',Label20
+'(NP(NNS(S(VP',Label21
+'(VP(TO(VP',Label22
+'(VP(ADVP(VB(NP(PP',Label23
+'(ADVP(RB',Label56
+'(NP(PRP$(NN',Label25
+'(PP(IN(NP(NNP',Label26
+'(NP(CONJP',Label27
+'(CONJP(RB(RB(IN',Label28
+'(NP(NP(PP',Label7
+'(NP(PRP$(NN',Label25
+'(PP(IN(SBAR',Label29
+'(SBAR(WHNP(S',Label30
+'(WHNP(WP',Label31
+'(S(NP(VP',Label4
+'(NP(NNP',Label32
+'(VP(VBZ(VP',Label33
+'(VP(VBN(NP',Label34
+'(NP(PRP',Label35
+'(S(.(.',Label36
+'(S(NP',Label12
+'(NP(NP(PP',Label7
+'(NP(DT(JJ(NN',Label37
+'(PP(IN(NP',Label19
+'(NP(DT(NN',Label5
+'(S(VP',Label15
+'(VP(VBZ(NP',Label6
+'(NP(NP(SBAR',Label38
+'(SBAR(WHNP(S',Label30
+'(WHNP(WP',Label31
+'(S(VP',Label15
+'(VP(VBZ(VP',Label33
+'(VP(VBN(S',Label39
+'(S(VP',Label15
+'(VP(TO(VP',Label22
+'(VP(VB(PP(SBAR',Label40
+'(PP(IN(NP',Label19
+'(NP(NP(PP',Label7
+'(NP(DT(NN',Label5
+'(PP(IN(NP',Label19
+'(NP(NNP(NNP',Label18
+'(SBAR(IN(S',Label41
+'(S(VP',Label15
+'(VP(VBG',Label42
+'(VP(PRT(RP',Label7
+'(VP(NP',Label43
+'(NP(NP(PP',Label7
+'(NP(ADJ(NN',Label44
+'(ADJP(JJ(CC(JJ',Label45
+'(NP(NN',Label46
+'(PP(IN(NP',Label19
+'(NP(NP(PP',Label7
+'(NP(DT(NN',Label5
+'(PP(IN(NP',Label19
+'(NP(NN',Label46
+'(VP(SBAR',Label47
+'(SBAR(IN(S',Label41
+'(S(NP(VP',Label4
+'(NP(NNP',Label32
+'(VP(VBZ(VP',Label33
+'(VP(VBN(NP',Label34
+'(NP(PRP',Label35
+'(S(NP(VP',Label4
+'(NP(NNP(NNP',Label18
+'(VP(VBZ(SBAR',Label48
+'(SBAR(S',Label49
+'(S(NP(VP',Label4
+'(NP(NNS(NNS',Label50
+'(VP(MD(VP',Label51
+'(VP(VB(SBAR',Label52
+'(SBAR(IN(S(VP',Label53
+'(VP(MD(VP',Label51
+'(VP(VB(S',Label54
+'(S(NP(VP',Label4
+'(NP(PRP',Label35
+'(VP(TO(VP',Label22
+'(VP(ADVP(VB(NP',Label24
+'(ADVP(RB',Label56
+'(NP(NNS(S(VP',Label21
+'(VP(TO(VP',Label22
+'(VP(VB(CC(VB(NP(PP',Label57
+'(NP(DT(NN(NNS',Label58
+'(PP(IN(NP',Label19
+'(NP(JJ(NN',Label10
+'(PP(IN(NP',Label19
+'(NP(PRP$(NNS',Label59
+'(NP(NNP(NNP(NNP(.',Label55
+'(SINV(S',Label60
+'(S(NP(VP',Label4
+'(NP(PRP',Label35
+'(VP(VBD(S',Label61
+'(S(VP',Label15
+'(VP(TO(VP',Label22
+'(VP(VB',Label62
